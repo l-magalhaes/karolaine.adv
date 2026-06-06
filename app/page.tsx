@@ -427,7 +427,7 @@ export default function Home() {
           </div>
 
           {/* Right: action cards */}
-          <div className="grid grid-cols-1 gap-5" style={{ maxWidth: "320px" }}>
+          <div className="grid grid-cols-2 gap-5">
             {[{
                 icon: (
                   <svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor">
@@ -437,6 +437,18 @@ export default function Home() {
                 title: "FALAR NO WHATSAPP",
                 desc: "Respostas rápidas e personalizadas.",
                 href: waLink,
+              },
+              {
+                icon: (
+                  <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor" stroke="none" opacity="0.15"/>
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                    <circle cx="12" cy="9" r="2.5" />
+                  </svg>
+                ),
+                title: "LOCALIZAÇÃO DO ESCRITÓRIO",
+                desc: "Veja como chegar.",
+                href: "https://www.google.com/maps/place/Karolaine+Sorrechio+%7C+Advogada/@-23.4504294,-52.0281075,17z/data=!3m1!4b1!4m6!3m5!1s0x94ed29da5d5fc435:0xe8dd55432800934b!8m2!3d-23.4504294!4d-52.0281075!16s%2Fg%2F11vz6n7vb4?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D",
               },
             ].map((card) => (
               <a
@@ -526,7 +538,7 @@ export default function Home() {
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
                     <circle cx="12" cy="9" r="2.5" />
                   </svg>
-                  Paiçandu/PR e Maringa/PR
+                  Av. Campos Elíseos, n° 332 (sala 01), Jd Bela Vista, Paiçandu/PR
                 </li>
               </ul>
             </div>
