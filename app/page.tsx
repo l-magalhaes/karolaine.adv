@@ -187,22 +187,36 @@ export default function Home() {
           </div>
 
           {/* Right: placeholder + decorative monogram */}
-          <div className="relative flex items-center justify-center py-20">
-            {/* Decorative logo */}
+          <div className="relative flex items-end justify-center self-stretch">
+            {/* Logo behind — decorative */}
             <Image
-              // src="/karolaine-principal-03.png"
               src="/logo.png"
+              alt=""
+              width={600}
+              height={600}
+              className="absolute select-none pointer-events-none"
+              style={{
+                opacity: 0.3,
+                right: "-15rem",
+                top: "50%",
+                transform: "translateY(-50%)",
+                zIndex: 0,
+                objectFit: "contain",
+              }}
+            />
+            {/* Lawyer photo */}
+            <Image
+              src="/adv08.png"
               alt=""
               width={1200}
               height={1200}
               className="absolute select-none pointer-events-none"
               style={{
-                opacity: 0.3,
                 right: "-4rem",
-                top: "50%",
-                transform: "translateY(-50%)",
-                zIndex: 0,
+                bottom: 0,
+                zIndex: 1,
                 objectFit: "contain",
+                objectPosition: "bottom",
               }}
             />
           </div>
