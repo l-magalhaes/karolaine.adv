@@ -190,14 +190,15 @@ export default function Home() {
           <div className="relative flex items-center justify-center py-20">
             {/* Decorative logo */}
             <Image
+              // src="/karolaine-principal-03.png"
               src="/logo.png"
               alt=""
-              width={380}
-              height={380}
+              width={1200}
+              height={1200}
               className="absolute select-none pointer-events-none"
               style={{
-                opacity: 0.06,
-                right: "-3rem",
+                opacity: 0.3,
+                right: "-4rem",
                 top: "50%",
                 transform: "translateY(-50%)",
                 zIndex: 0,
