@@ -138,7 +138,7 @@ export default function Image() {
                 textTransform: "uppercase",
               }}
             >
-              ADVOCADA
+              ADVOGADA
             </span>
           </div>
         </div>

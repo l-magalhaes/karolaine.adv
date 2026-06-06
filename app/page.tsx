@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   const navItems = [
     { label: "INÍCIO", href: "#inicio" },
@@ -21,45 +23,59 @@ export default function Home() {
         </svg>
       ),
       title: "Direito Civil",
-      desc: "Questões contratuais, obrigação, responsabilidade civil, família e sucessões.",
+      desc: "Contratos, obrigações, responsabilidade civil e sucessões.",
     },
     {
       icon: (
         <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M30 6 H12 C10.9 6 10 6.9 10 8 V40 C10 41.1 10.9 42 12 42 H36 C37.1 42 38 41.1 38 40 V14 L30 6 Z" />
-          <polyline points="30,6 30,14 38,14" />
-          <line x1="17" y1="22" x2="31" y2="22" />
-          <line x1="17" y1="28" x2="31" y2="28" />
-          <line x1="17" y1="34" x2="24" y2="34" />
+          <circle cx="17" cy="13" r="5" />
+          <circle cx="31" cy="13" r="5" />
+          <path d="M6 42 C6 33 11 27 17 27" />
+          <path d="M42 42 C42 33 37 27 31 27" />
+          <circle cx="24" cy="20" r="4" />
+          <path d="M16 42 C16 35 19 30 24 30 C29 30 32 35 32 42" />
         </svg>
       ),
-      title: "Direito Previdenciário",
-      desc: "Aposentadorias, benefícios e planejamento previdenciário.",
+      title: "Direito de Família",
+      desc: "Divórcio, guarda, alimentos, inventário e adoção.",
     },
     {
       icon: (
         <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M19 14 V11 C19 9.9 21 9 24 9 C27 9 29 9.9 29 11 V14" />
-          <rect x="7" y="14" width="34" height="24" rx="2" />
-          <line x1="7" y1="26" x2="41" y2="26" />
+          <polyline points="6,22 24,8 42,22" />
+          <rect x="10" y="22" width="28" height="20" rx="1" />
+          <rect x="19" y="30" width="10" height="12" />
         </svg>
       ),
-      title: "Direito Empresarial",
-      desc: "Assessoria jurídica para empresas, contratos, societário e consultivo.",
+      title: "Direito Imobiliário",
+      desc: "Compra, venda, locação, usucapião e regularização de imóveis.",
     },
     {
       icon: (
         <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="24" cy="14" r="7" />
-          <path d="M10 44 C10 34 16 28 24 28 C32 28 38 34 38 44" />
+          <path d="M24 6 L38 11 L38 26 C38 34 31 40 24 43 C17 40 10 34 10 26 L10 11 Z" />
+          <line x1="24" y1="18" x2="24" y2="28" />
+          <circle cx="24" cy="33" r="1.2" fill="currentColor" />
         </svg>
       ),
-      title: "Direito Trabalhista",
-      desc: "Defesa de empregadores e empregados, consultivo e contencioso.",
+      title: "Direito Criminal",
+      desc: "Defesa criminal, habeas corpus e acompanhamento de inquéritos.",
+    },
+    {
+      icon: (
+        <svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="24" cy="24" r="17" />
+          <path d="M18 20 C18 15 30 15 30 20 C30 25 18 25 18 30 C18 35 30 35 30 30" />
+          <line x1="24" y1="10" x2="24" y2="13" />
+          <line x1="24" y1="35" x2="24" y2="38" />
+        </svg>
+      ),
+      title: "Direito do Consumidor",
+      desc: "Proteção ao consumidor, revisão contratual e indenizações.",
     },
   ];
 
-  const waLink = "https://wa.me/5541999999999";
+  const waLink = "https://wa.me/5544991755173";
 
   return (
     <main>
@@ -68,24 +84,13 @@ export default function Home() {
         <nav className="max-w-7xl mx-auto px-8 h-[76px] flex items-center justify-between gap-8">
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-3 flex-shrink-0">
-            <span
-              style={{
-                fontFamily: "var(--font-cormorant)",
-                fontSize: "2.6rem",
-                fontStyle: "italic",
-                fontWeight: 300,
-                color: "#C9A96E",
-                lineHeight: 1,
-              }}
-            >
-              KS
-            </span>
+            <Image src="/logo.png" alt="Karolaine Sorrechio" width={48} height={48} style={{ objectFit: "contain" }} />
             <div className="border-l border-white/20 pl-3">
               <p className="text-white leading-tight" style={{ fontSize: "0.6rem", letterSpacing: "0.25em" }}>
                 KAROLAINE SORRECHIO
               </p>
               <p style={{ fontSize: "0.55rem", letterSpacing: "0.3em", color: "#C9A96E" }}>
-                ADVOCADA
+                ADVOGADA
               </p>
             </div>
           </a>
@@ -111,20 +116,7 @@ export default function Home() {
             ))}
           </ul>
 
-          {/* CTA */}
-          <a
-            href="#atendimento"
-            className="hidden lg:flex items-center flex-shrink-0 transition-all duration-300 hover:bg-[#C9A96E] hover:text-[#0D0D0D]"
-            style={{
-              fontSize: "0.6rem",
-              letterSpacing: "0.2em",
-              color: "#C9A96E",
-              border: "1px solid #C9A96E",
-              padding: "10px 22px",
-            }}
-          >
-            AGENDAR CONSULTA
-          </a>
+
         </nav>
       </header>
 
@@ -166,20 +158,6 @@ export default function Home() {
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 mb-16">
               <a
-                href="#atendimento"
-                className="flex items-center gap-2 transition-colors hover:bg-[#d4b87a]"
-                style={{
-                  background: "#C9A96E",
-                  color: "#0D0D0D",
-                  fontSize: "0.6rem",
-                  letterSpacing: "0.2em",
-                  fontWeight: 600,
-                  padding: "14px 28px",
-                }}
-              >
-                AGENDAR CONSULTA <span style={{ fontSize: "1rem" }}>›</span>
-              </a>
-              <a
                 href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -210,24 +188,22 @@ export default function Home() {
 
           {/* Right: placeholder + decorative monogram */}
           <div className="relative flex items-center justify-center py-20">
-            {/* Decorative KS */}
-            <span
+            {/* Decorative logo */}
+            <Image
+              src="/logo.png"
+              alt=""
+              width={380}
+              height={380}
               className="absolute select-none pointer-events-none"
               style={{
-                fontFamily: "var(--font-cormorant)",
-                fontSize: "20rem",
-                fontStyle: "italic",
-                fontWeight: 300,
-                color: "rgba(201,169,110,0.06)",
-                lineHeight: 1,
+                opacity: 0.06,
                 right: "-3rem",
                 top: "50%",
                 transform: "translateY(-50%)",
                 zIndex: 0,
+                objectFit: "contain",
               }}
-            >
-              KS
-            </span>
+            />
             {/* Image placeholder */}
             <div
               className="relative z-10 w-full flex flex-col items-center justify-center gap-3"
@@ -344,14 +320,14 @@ export default function Home() {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-4" style={{ borderTop: "1px solid rgba(26,26,26,0.1)" }}>
+          <div className="grid grid-cols-5" style={{ borderTop: "1px solid rgba(26,26,26,0.1)" }}>
             {areas.map((area, i) => (
               <div
                 key={area.title}
                 className="group cursor-pointer"
                 style={{
-                  padding: "2.5rem 2rem",
-                  borderRight: i < 3 ? "1px solid rgba(26,26,26,0.1)" : "none",
+                  padding: "2.5rem 1.5rem",
+                  borderRight: i < 4 ? "1px solid rgba(26,26,26,0.1)" : "none",
                 }}
               >
                 <div className="mb-6" style={{ color: "#C9A96E" }}>
@@ -458,24 +434,8 @@ export default function Home() {
           </div>
 
           {/* Right: action cards */}
-          <div className="grid grid-cols-2 gap-5">
-            {[
-              {
-                icon: (
-                  <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round">
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <line x1="16" y1="2" x2="16" y2="6" />
-                    <line x1="8" y1="2" x2="8" y2="6" />
-                    <line x1="3" y1="10" x2="21" y2="10" />
-                    <line x1="8" y1="14" x2="16" y2="14" />
-                    <line x1="8" y1="18" x2="12" y2="18" />
-                  </svg>
-                ),
-                title: "AGENDAR CONSULTA",
-                desc: "Atendimento individual e estratégico.",
-                href: "#contato",
-              },
-              {
+          <div className="grid grid-cols-1 gap-5" style={{ maxWidth: "320px" }}>
+            {[{
                 icon: (
                   <svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -521,23 +481,12 @@ export default function Home() {
             {/* Col 1: Brand */}
             <div>
               <div className="flex items-center gap-3 mb-5">
-                <span
-                  style={{
-                    fontFamily: "var(--font-cormorant)",
-                    fontSize: "2.6rem",
-                    fontStyle: "italic",
-                    fontWeight: 300,
-                    color: "#C9A96E",
-                    lineHeight: 1,
-                  }}
-                >
-                  KS
-                </span>
+                <Image src="/logo.png" alt="Karolaine Sorrechio" width={48} height={48} style={{ objectFit: "contain" }} />
               </div>
               <p className="text-white leading-tight mb-1" style={{ fontSize: "0.6rem", letterSpacing: "0.25em" }}>
                 KAROLAINE SORRECHIO
               </p>
-              <p style={{ fontSize: "0.55rem", letterSpacing: "0.3em", color: "#C9A96E" }}>ADVOCADA</p>
+              <p style={{ fontSize: "0.55rem", letterSpacing: "0.3em", color: "#C9A96E" }}>ADVOGADA</p>
             </div>
 
             {/* Col 2: Links */}
@@ -570,21 +519,21 @@ export default function Home() {
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>
-                  (41) 99999-9999
+                  (44) 99175-5173
                 </li>
                 <li className="flex items-center gap-2" style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.78rem" }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="flex-shrink-0">
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                     <polyline points="2,4 12,13 22,4" />
                   </svg>
-                  contato@karlainesorrechio.adv.br
+                 karolainesorrechio.adv@outlook.com
                 </li>
                 <li className="flex items-center gap-2" style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.78rem" }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="flex-shrink-0">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
                     <circle cx="12" cy="9" r="2.5" />
                   </svg>
-                  Curitiba/PR
+                  Paiçandu/PR e Maringa/PR
                 </li>
               </ul>
             </div>
@@ -604,16 +553,7 @@ export default function Home() {
                     <circle cx="12" cy="12" r="4" />
                     <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
                   </svg>
-                  @karlainesorrechio.adv
-                </li>
-                <li
-                  className="flex items-center gap-2 cursor-pointer transition-colors hover:text-white"
-                  style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.78rem" }}
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                  Karolaine Sorrechio Advocacia
+                  @karolainesorrechio.adv
                 </li>
               </ul>
             </div>
