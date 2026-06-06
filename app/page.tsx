@@ -204,25 +204,6 @@ export default function Home() {
                 objectFit: "contain",
               }}
             />
-            {/* Image placeholder */}
-            <div
-              className="relative z-10 w-full flex flex-col items-center justify-center gap-3"
-              style={{
-                maxWidth: "420px",
-                aspectRatio: "3/4",
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-              }}
-            >
-              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1">
-                <rect x="3" y="3" width="18" height="18" rx="1" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <polyline points="21,15 16,10 5,21" />
-              </svg>
-              <span style={{ color: "rgba(255,255,255,0.2)", fontSize: "0.65rem", letterSpacing: "0.3em" }}>
-                FOTO DA ADVOGADA
-              </span>
-            </div>
           </div>
         </div>
       </section>
@@ -272,19 +253,15 @@ export default function Home() {
 
             {/* Right: image + vertical text */}
             <div className="relative">
-              {/* Image placeholder */}
-              <div
-                className="w-full flex flex-col items-center justify-center gap-3"
-                style={{ aspectRatio: "4/3", background: "#DDD8D1" }}
-              >
-                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.18)" strokeWidth="1">
-                  <rect x="3" y="3" width="18" height="18" rx="1" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21,15 16,10 5,21" />
-                </svg>
-                <span style={{ color: "rgba(0,0,0,0.25)", fontSize: "0.65rem", letterSpacing: "0.3em" }}>
-                  IMAGEM
-                </span>
+              {/* Sobre image */}
+              <div className="w-full">
+                <Image
+                  src="/adv.jpeg"
+                  alt="Karolaine Sorrechio"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                />
               </div>
               {/* Vertical text */}
               <div
@@ -369,10 +346,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-4">
             {[
-              { top: "+300", bottom: "CLIENTES ATENDIDOS", gold: true },
-              { top: "+5 ANOS", bottom: "DE EXPERIÊNCIA", gold: true },
               { top: "ATENDIMENTO", bottom: "PERSONALIZADO", gold: false },
+              { top: "ÉTICA", bottom: "EM PRIMEIRO LUGAR", gold: false },
               { top: "ATUAÇÃO", bottom: "EM TODO O BRASIL", gold: false },
+              { top: "SEGURANÇA", bottom: "JURÍDICA PARA VOCÊ", gold: false }
+
             ].map((stat, i) => (
               <div
                 key={stat.bottom}
@@ -568,7 +546,7 @@ export default function Home() {
               © 2026 Karolaine Sorrechio Advocacia. Todos os direitos reservados.
             </span>
             <span style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.6rem", letterSpacing: "0.1em" }}>
-              OAB/PR 00.000
+              OAB/PR 121.088
             </span>
           </div>
         </div>
