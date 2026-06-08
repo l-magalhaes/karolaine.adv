@@ -146,6 +146,8 @@ export default function Image() {
         {/* Main headline */}
         <div
           style={{
+            display: "flex",
+            flexWrap: "wrap",
             fontSize: "52px",
             fontWeight: 300,
             color: "#ffffff",
