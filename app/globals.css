@@ -25,3 +25,33 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Responsive borders — área de atuação cards */
+.area-card {
+  border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+}
+.area-card:last-child {
+  border-bottom: none;
+}
+@media (min-width: 1024px) {
+  .area-card {
+    border-bottom: none;
+    border-right: 1px solid rgba(26, 26, 26, 0.1);
+  }
+  .area-card:last-child {
+    border-right: none;
+  }
+}
+
+/* Responsive borders — stats cards */
+.stat-card:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+@media (min-width: 1024px) {
+  .stat-card {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .stat-card:last-child {
+    border-right: none;
+  }
+}

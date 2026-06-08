@@ -1,14 +1,7 @@
 import Image from "next/image";
+import Header from "./components/Header";
 
 export default function Home() {
-  const navItems = [
-    { label: "INÍCIO", href: "#inicio" },
-    { label: "SOBRE", href: "#sobre" },
-    { label: "ÁREAS DE ATUAÇÃO", href: "#areas" },
-    { label: "ATENDIMENTO", href: "#atendimento" },
-    { label: "CONTATO", href: "#contato" },
-  ];
-
   const areas = [
     {
       icon: (
@@ -79,55 +72,16 @@ export default function Home() {
 
   return (
     <main>
-      {/* ─────────────────────────── HEADER ─────────────────────────── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0D0D0D]/96 backdrop-blur-sm border-b border-white/5">
-        <nav className="max-w-7xl mx-auto px-8 h-[76px] flex items-center justify-between gap-8">
-          {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-3 flex-shrink-0">
-            <Image src="/logo.png" alt="Karolaine Sorrechio" width={48} height={48} style={{ objectFit: "contain" }} />
-            <div className="border-l border-white/20 pl-3">
-              <p className="text-white leading-tight" style={{ fontSize: "0.6rem", letterSpacing: "0.25em" }}>
-                KAROLAINE SORRECHIO
-              </p>
-              <p style={{ fontSize: "0.55rem", letterSpacing: "0.3em", color: "#C9A96E" }}>
-                ADVOGADA
-              </p>
-            </div>
-          </a>
-
-          {/* Navigation */}
-          <ul className="hidden lg:flex items-center gap-8">
-            {navItems.map((item, i) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className="transition-colors"
-                  style={{
-                    fontSize: "0.6rem",
-                    letterSpacing: "0.2em",
-                    color: i === 0 ? "#ffffff" : "rgba(255,255,255,0.55)",
-                    borderBottom: i === 0 ? "1px solid #C9A96E" : "none",
-                    paddingBottom: i === 0 ? "2px" : "0",
-                  }}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-
-        </nav>
-      </header>
+      <Header />
 
       {/* ─────────────────────────── HERO ─────────────────────────── */}
       <section id="inicio" className="bg-[#0D0D0D] relative overflow-hidden" style={{ minHeight: "100vh" }}>
         <div
-          className="max-w-7xl mx-auto px-8 grid grid-cols-2 gap-16 items-center"
+          className="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
           style={{ minHeight: "100vh", paddingTop: "76px" }}
         >
           {/* Left content */}
-          <div className="py-20">
+          <div className="py-10 lg:py-20">
             {/* Tag */}
             <div className="flex items-center gap-4 mb-10">
               <span style={{ color: "#C9A96E", fontSize: "0.6rem", letterSpacing: "0.35em" }}>
@@ -187,7 +141,7 @@ export default function Home() {
           </div>
 
           {/* Right: placeholder + decorative monogram */}
-          <div className="relative flex items-end justify-center self-stretch">
+          <div className="relative hidden lg:flex items-end justify-center self-stretch">
             {/* Logo behind — decorative */}
             <Image
               src="/logo.png"
@@ -225,8 +179,8 @@ export default function Home() {
 
       {/* ─────────────────────────── SOBRE ─────────────────────────── */}
       <section id="sobre" className="bg-[#F5F0EB] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-8 py-24">
-          <div className="grid grid-cols-2 gap-20 items-center">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             {/* Left content */}
             <div>
               <div className="flex items-center gap-4 mb-10">
@@ -280,7 +234,7 @@ export default function Home() {
               </div>
               {/* Vertical text */}
               <div
-                className="absolute top-0 bottom-0 flex items-center"
+                className="absolute top-0 bottom-0 hidden lg:flex items-center"
                 style={{ right: "-3.5rem", writingMode: "vertical-rl" }}
               >
                 <span
@@ -301,7 +255,7 @@ export default function Home() {
 
       {/* ─────────────────────────── ÁREAS ─────────────────────────── */}
       <section id="areas" className="bg-[#F5F0EB] pb-24">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
           {/* Section title */}
           <div className="flex items-center justify-center gap-8 mb-20">
             <div className="flex-1 h-px max-w-[120px]" style={{ background: "rgba(201,169,110,0.4)" }} />
@@ -312,15 +266,12 @@ export default function Home() {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-5" style={{ borderTop: "1px solid rgba(26,26,26,0.1)" }}>
-            {areas.map((area, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5" style={{ borderTop: "1px solid rgba(26,26,26,0.1)" }}>
+            {areas.map((area) => (
               <div
                 key={area.title}
-                className="group cursor-pointer"
-                style={{
-                  padding: "2.5rem 1.5rem",
-                  borderRight: i < 4 ? "1px solid rgba(26,26,26,0.1)" : "none",
-                }}
+                className="area-card group cursor-pointer"
+                style={{ padding: "2.5rem 1.5rem" }}
               >
                 <div className="mb-6" style={{ color: "#C9A96E" }}>
                   {area.icon}
@@ -358,27 +309,24 @@ export default function Home() {
           className="absolute bottom-0 right-0 w-80 h-80 pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(201,169,110,0.18) 0%, transparent 70%)" }}
         />
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4">
             {[
               { top: "ATENDIMENTO", bottom: "PERSONALIZADO", gold: false },
               { top: "ÉTICA", bottom: "EM PRIMEIRO LUGAR", gold: false },
               { top: "ATUAÇÃO", bottom: "EM TODO O BRASIL", gold: false },
               { top: "SEGURANÇA", bottom: "JURÍDICA PARA VOCÊ", gold: false }
 
-            ].map((stat, i) => (
+            ].map((stat) => (
               <div
                 key={stat.bottom}
-                className="text-center py-4"
-                style={{
-                  borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none",
-                  padding: "1rem 2rem",
-                }}
+                className="stat-card text-center"
+                style={{ padding: "1rem 2rem" }}
               >
                 <div
                   style={{
                     fontFamily: "var(--font-cormorant)",
-                    fontSize: "2.4rem",
+                  fontSize: "clamp(1.4rem, 4vw, 2.4rem)",
                     fontWeight: 300,
                     color: stat.gold ? "#C9A96E" : "#ffffff",
                     lineHeight: 1.1,
@@ -398,7 +346,7 @@ export default function Home() {
 
       {/* ─────────────────────────── ATENDIMENTO ─────────────────────────── */}
       <section id="atendimento" className="bg-[#F5F0EB] py-24">
-        <div className="max-w-7xl mx-auto px-8 grid grid-cols-2 gap-20 items-center">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           {/* Left */}
           <div>
             <div className="flex items-center gap-4 mb-8">
@@ -480,9 +428,9 @@ export default function Home() {
 
       {/* ─────────────────────────── FOOTER ─────────────────────────── */}
       <footer id="contato" className="bg-[#0D0D0D]">
-        <div className="max-w-7xl mx-auto px-8 pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 pt-16 pb-8">
           {/* Main grid */}
-          <div className="grid grid-cols-4 gap-12 mb-14">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-14">
             {/* Col 1: Brand */}
             <div>
               <div className="flex items-center gap-3 mb-5">
@@ -566,7 +514,7 @@ export default function Home() {
 
           {/* Bottom bar */}
           <div
-            className="flex justify-between items-center pt-8"
+            className="flex flex-col gap-3 lg:flex-row lg:justify-between items-center pt-8"
             style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
           >
             <span style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.6rem", letterSpacing: "0.1em" }}>
