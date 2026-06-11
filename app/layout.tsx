@@ -15,7 +15,7 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const siteUrl = "https://karlainesorrechio.adv.br";
+const siteUrl = "https://karolainesorrechioadv.com.br/";
 const siteName = "Karolaine Sorrechio Advocacia";
 const siteDescription =
   "Advocacia com excelência em Paiçandu/PR e Maringa/PR. Atendimento jurídico personalizado nas áreas de Direito Civil, Previdenciário, Empresarial e Trabalhista. Atendimento nacional.";
